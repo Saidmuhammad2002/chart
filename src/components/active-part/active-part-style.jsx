@@ -20,6 +20,7 @@ export const Wrapper = styled.div`
   margin-right: -20px;
   @media (max-width: 1100px) {
     margin: auto;
+    margin-top: 70px;
   }
 `;
 export const Label = styled.p`
