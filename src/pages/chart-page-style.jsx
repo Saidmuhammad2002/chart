@@ -13,7 +13,11 @@ export const Wrapper = styled.div`
   > div {
     justify-self: center;
   }
+  @media (max-width: 1100px) {
+    display: block;
+  }
   @media (max-width: 700px) {
+    display: flex;
     padding: 16px;
     flex-direction: column;
     justify-content: center;

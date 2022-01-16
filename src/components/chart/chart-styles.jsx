@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
   .recharts-surface {
     overflow: visible !important;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 1100px) {
     margin: auto;
   }
   @media (max-width: 700px) {

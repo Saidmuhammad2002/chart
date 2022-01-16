@@ -11,12 +11,14 @@ export const Wrapper = styled.div`
   /* Note: backdrop-filter has minimal browser support */
 
   border-radius: 10px;
+  max-width: 400px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
   margin-top: 30%;
   margin-left: 20px;
-  @media (max-width: 1000px) {
+  margin-right: -20px;
+  @media (max-width: 1100px) {
     margin: auto;
   }
 `;
