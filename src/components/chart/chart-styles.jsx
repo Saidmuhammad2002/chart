@@ -4,6 +4,7 @@ import img1 from "../../assets/chart/Subtract.png";
 import img2 from "../../assets/chart/triangles.png";
 
 export const Wrapper = styled.div`
+  margin-left: 70px;
   max-width: 570px;
   width: 60%;
   height: 570px;
@@ -14,7 +15,14 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (max-width: 500px) {
-    width: 100%;
+
+  .recharts-surface {
+    overflow: visible !important;
+  }
+  @media (max-width: 1000px) {
+    margin: auto;
+  }
+  @media (max-width: 700px) {
+    margin: 0;
   }
 `;

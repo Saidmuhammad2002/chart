@@ -6,6 +6,7 @@ import {
   Cell,
   Tooltip,
   ResponsiveContainer,
+  Text,
 } from "recharts";
 import { Wrapper } from "./chart-styles";
 import CustomTooltip from "../tooltip/custom-tooltip";
@@ -30,8 +31,8 @@ const renderActiveShape = (props: any) => {
     <Sector
       cx={cx}
       cy={cy}
-      innerRadius={innerRadius + 5}
-      outerRadius={outerRadius + 5}
+      innerRadius={innerRadius + 1}
+      outerRadius={outerRadius + 1}
       startAngle={startAngle - 0.5}
       endAngle={endAngle + 0.5}
       fill={fill}
@@ -39,12 +40,38 @@ const renderActiveShape = (props: any) => {
   );
 };
 
+const RADIAN = Math.PI / 180;
+const renderCustomizedLabel = ({
+  cx,
+  cy,
+  midAngle,
+  innerRadius,
+  outerRadius,
+  percent,
+  index,
+}) => {
+  const radius = innerRadius + (outerRadius - innerRadius) * 1.2;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+  return (
+    <Text
+      x={x}
+      y={y}
+      fill="white"
+      textAnchor={x > cx ? "start" : "end"}
+      width={10}
+    >
+      {data[index].name}
+    </Text>
+  );
+};
 export default function Chart({ activeIndex, setActiveIndex }) {
   const onPieEnter = (_, index) => setActiveIndex(index);
 
   return (
     <Wrapper>
-      <ResponsiveContainer width="100%" height={560}>
+      <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
             cornerRadius={1}
@@ -57,6 +84,9 @@ export default function Chart({ activeIndex, setActiveIndex }) {
             dataKey="rate"
             onMouseEnter={onPieEnter}
             paddingAngle={1}
+            labelLine={false}
+            label={renderCustomizedLabel}
+            isAnimationActive={false}
           >
             {data.map((entry, index) => (
               <Cell
@@ -65,7 +95,10 @@ export default function Chart({ activeIndex, setActiveIndex }) {
               />
             ))}
           </Pie>
-          <Tooltip content={<CustomTooltip />} />
+          <Tooltip
+            content={<CustomTooltip />}
+            allowEscapeViewBox={{ x: true, y: true }}
+          />
         </PieChart>
       </ResponsiveContainer>
     </Wrapper>

@@ -16,8 +16,8 @@ export const Wrapper = styled.div`
   gap: 20px;
   margin-top: 30%;
   margin-left: 20px;
-  @media (max-width: 700px) {
-    margin: 0px 0px 30px 0px;
+  @media (max-width: 1000px) {
+    margin: auto;
   }
 `;
 export const Label = styled.p`
