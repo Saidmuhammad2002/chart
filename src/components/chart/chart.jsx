@@ -50,7 +50,7 @@ const renderCustomizedLabel = ({
   percent,
   index,
 }) => {
-  const radius = innerRadius + (outerRadius - innerRadius) * 1.2;
+  const radius = innerRadius + (outerRadius - innerRadius) * 1.3;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
@@ -60,7 +60,8 @@ const renderCustomizedLabel = ({
       y={y}
       fill="white"
       textAnchor={x > cx ? "start" : "end"}
-      width={10}
+      width={100}
+      dominantBaseline="middle"
     >
       {data[index].name}
     </Text>
@@ -97,7 +98,7 @@ export default function Chart({ activeIndex, setActiveIndex }) {
           </Pie>
           <Tooltip
             content={<CustomTooltip />}
-            allowEscapeViewBox={{ x: true, y: true }}
+            allowEscapeViewBox={{ x: true, y: false }}
           />
         </PieChart>
       </ResponsiveContainer>

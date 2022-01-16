@@ -23,6 +23,9 @@ export const Wrapper = styled.div`
     margin: auto;
   }
   @media (max-width: 700px) {
+    tspan {
+      font-size: 12px;
+    }
     margin: 0;
   }
 `;
