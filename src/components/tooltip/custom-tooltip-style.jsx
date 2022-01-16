@@ -21,6 +21,9 @@ export const Label = styled.p`
   font-size: 40px;
   margin: 0px;
   padding: 0px;
+  @media (max-width: 600px) {
+    font-size: 20px;
+  }
   /* identical to box height */
 
   color: #ffffff;
@@ -32,6 +35,9 @@ export const Population = styled.p`
   line-height: 20px;
   margin: 0px;
   padding: 0px;
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
   color: #ffffff;
 `;
 export const Rate = styled.p`
@@ -40,6 +46,9 @@ export const Rate = styled.p`
   font-size: 25px;
   margin: 0px;
   padding: 0px;
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
   line-height: 31px;
 
   color: #ffffff;
