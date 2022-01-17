@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
   }
 `;
 export const MainLine = styled.div`
-  width: 180vmax;
+  width: 120vmax;
   min-width: 1100px;
   height: 14px;
   display: flex;
