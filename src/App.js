@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <RoadMap />
-      {/* <ChartPage /> */}
+      <ChartPage />
     </div>
   );
 }

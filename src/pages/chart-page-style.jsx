@@ -1,23 +1,19 @@
 import styled from "styled-components";
 export const Wrapper = styled.div`
-  width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
   height: fit-content;
   box-sizing: border-box;
-  padding: 58px 102px 35px 53px;
+  padding: 58px 0 35px 0;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  > div {
-    justify-self: center;
-  }
-  @media (max-width: 1100px) {
-    display: block;
-  }
+  justify-content: center;
+
   @media (max-width: 700px) {
+    /* max-height: 50%; */
     display: flex;
-    padding: 16px;
+    padding: 16px 0;
     flex-direction: column;
     justify-content: center;
   }

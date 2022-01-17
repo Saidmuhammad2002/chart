@@ -1,7 +1,6 @@
 import Chart from "../components/chart/chart";
 import React, { useState } from "react";
 import { Wrapper } from "./chart-page-style";
-import ActivePart from "../components/active-part/active-part";
 export const data = [
   { name: "Team", value: "2700M", rate: 24.3 },
   { name: "DEX Liquidity", value: "60M", rate: 0.5 },
@@ -20,7 +19,6 @@ const ChartPage = () => {
   return (
     <Wrapper>
       <Chart activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
-      <ActivePart {...data[activeIndex]} />
     </Wrapper>
   );
 };
